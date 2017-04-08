@@ -8,7 +8,7 @@ public class saveCapture : MonoBehaviour {
 	private int captureCounter = 0;
 
 	// The desired camera image pixel format
-	private Image.PIXEL_FORMAT mPixelFormat = Image.PIXEL_FORMAT.GRAYSCALE;// or RGBA8888, RGB888, RGB565, YUV
+	private Image.PIXEL_FORMAT mPixelFormat = Image.PIXEL_FORMAT.RGBA8888;// or RGBA8888, RGB888, RGB565, YUV
 	// Boolean flag telling whether the pixel format has been registered
 	private bool mFormatRegistered = false;
 	void Start ()
@@ -63,26 +63,28 @@ public class saveCapture : MonoBehaviour {
 			if (mAccessCameraImage)
 			{
 				Vuforia.Image image = CameraDevice.Instance.GetCameraImage(mPixelFormat);
-				if (image != null)
+				if ((image != null) && (captureCounter < 3))
 				{
-					string imageInfo = mPixelFormat + " image: \n";
-					imageInfo += " size: " + image.Width + " x " + image.Height + "\n";
-					imageInfo += " bufferSize: " + image.BufferWidth + " x " + image.BufferHeight + "\n";
-					imageInfo += " stride: " + image.Stride;
-					Debug.Log(imageInfo);
-		
 					Texture2D snap = new Texture2D(image.Width,image.Height);
 					image.CopyToTexture(snap);
 					snap.Apply();
 
-					System.IO.File.WriteAllBytes(savePath + captureCounter.ToString() + ".png", snap.EncodeToPNG());
-					++captureCounter;
+					Texture2D flipped = new Texture2D(snap.width,snap.height);
 
-					byte[] pixels = image.Pixels;
-					if (pixels != null && pixels.Length > 0)
-					{
-						Debug.Log("Image pixels: " + pixels[0] + "," + pixels[1] + "," + pixels[2] + ",...");
+					int xN = snap.width;
+					int yN = snap.height;
+
+					for(int i=0;i<xN;i++){
+						for(int j=0;j<yN;j++){
+							flipped.SetPixel(i, yN-j-1, snap.GetPixel(i,j));
+						}
 					}
+
+					flipped.Apply();
+
+
+					System.IO.File.WriteAllBytes (savePath + captureCounter.ToString () + ".png", flipped.EncodeToPNG ());
+					++captureCounter;
 				}
 			}
 		}
