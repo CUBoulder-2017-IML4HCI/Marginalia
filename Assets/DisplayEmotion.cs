@@ -12,10 +12,10 @@ public class DisplayEmotion : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Process proc = new Process();
-		proc.StartInfo.FileName = "python";
-		proc.StartInfo.WorkingDirectory = "/Users/jen/Development/Marginalia/Assets";
-		proc.StartInfo.Arguments = "test3.py";
-		proc.StartInfo.WindowStyle = ProcessWindowStyle.Minimized;
+		proc.StartInfo.FileName = "/usr/bin/python";
+		proc.StartInfo.WorkingDirectory = "/Users/jen/Development/Marginalia/Assets/emotion_detector";
+		proc.StartInfo.Arguments = "EmoDetect.py -i /Users/jen/Development/Marginalia/Assets/CamCaptures/3.jpg";
+		//proc.StartInfo.WindowStyle = ProcessWindowStyle.Minimized;
 		proc.StartInfo.CreateNoWindow = false;
 
 		proc.StartInfo.RedirectStandardOutput = true;
@@ -35,6 +35,7 @@ public class DisplayEmotion : MonoBehaviour {
 
 	void DataReceived( object sender, DataReceivedEventArgs eventArgs )
 	{
+		print (eventArgs.Data);
 		txt.text = "Are you " + eventArgs.Data + "?";
 	}
 

@@ -115,4 +115,9 @@ public class saveCapture : MonoBehaviour {
 			mFormatRegistered = false;
 		}
 	}
+	public void retakePics()
+	{
+		captureCounter = 0;
+	}
+		
 }
