@@ -4,7 +4,7 @@ using Vuforia;
 
 public class saveCapture : MonoBehaviour {
 	private bool mAccessCameraImage = true;
-	private string savePath = "CamCaptures/";
+	private string savePath = "Assets/CamCaptures/";
 	private int captureCounter = 0;
 
 	// The desired camera image pixel format

@@ -84,6 +84,7 @@
      <Compile Include="Assets\Vuforia\Scripts\WordBehaviour.cs" />
      <Compile Include="Assets\getEmotion.cs" />
      <Compile Include="Assets\saveCapture.cs" />
+     <Compile Include="Assets\terminalcommandrunscript.cs" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
      <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />
      <None Include="Assets\link.xml" />
