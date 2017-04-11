@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEditor;
 
 public class addface : MonoBehaviour {
 	int picTotal = 0;
@@ -19,17 +20,22 @@ public class addface : MonoBehaviour {
 
 	public void saveNew(){
 		File.Copy ("Assets/emotion_detector/1.jpg", "Assets/savedPics/saved_" + picTotal+".jpg", true);
-		Texture2D tex = (Texture2D)Resources.Load ("Assets/savedPics/saved_" + picTotal+".jpg");
-		//Material mat = new Material (tex);
+		var path = "Assets/savedPics/saved_" + picTotal + ".jpg";
+
+		TextureImporter importer = (TextureImporter)TextureImporter.GetAtPath (path);
+		importer.textureType = TextureImporterType.Sprite;
+		AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceUpdate);
+
+
 		GameObject newObject = Instantiate (fartiface);
-		newObject.GetComponent<SpriteRenderer>().sharedMaterial.mainTexture = tex;
+		newObject.transform.parent = GameObject.Find("ImageTarget").transform;
+		Sprite faceSprite = AssetDatabase.LoadAssetAtPath<Sprite> (path);
+		newObject.GetComponent<SpriteRenderer>().sprite = faceSprite;
 
+		Vector3 tempPosition = new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), 0);
+		newObject.transform.position = tempPosition;
 
-		//newObject.GetComponent<SpriteRenderer>().material.mainTexture = tex;
 		++picTotal;
-		//sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0.5f, 0.5f), 100.0f);
-
-
 	}
-			}
+}
 

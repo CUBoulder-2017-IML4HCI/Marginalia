@@ -11,6 +11,7 @@ public class TakeaPicture2 : MonoBehaviour
 	IEnumerator Start() 
 	{
 		webCamTexture = new WebCamTexture(1280, 720, 60);
+		webCamTexture.deviceName = "FaceTime HD Camera";
 		webCamTexture.Play();
 
 		// NOTE - you almost certainly have to do this here:
