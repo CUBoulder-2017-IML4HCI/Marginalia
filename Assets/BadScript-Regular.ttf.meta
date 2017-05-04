@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 44cf43c51bbb54469ac1929f70aac982
+timeCreated: 1492965683
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Bad Script
+  fontNames:
+  - Bad Script
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -46,11 +46,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\DisplayEmotion.cs" />
-     <Compile Include="Assets\EmptyClass.cs" />
-     <Compile Include="Assets\EmptyStruct.cs" />
-     <Compile Include="Assets\TakeaPicture.cs" />
-     <Compile Include="Assets\TakeaPicture2.cs" />
+     <Compile Include="Assets\GameStuff\DisplayEmotion.cs" />
+     <Compile Include="Assets\GameStuff\TakeaPicture.cs" />
+     <Compile Include="Assets\GameStuff\TakeaPicture2.cs" />
+     <Compile Include="Assets\GameStuff\addface.cs" />
+     <Compile Include="Assets\GameStuff\getEmotion.cs" />
+     <Compile Include="Assets\GameStuff\hideQuestion.cs" />
+     <Compile Include="Assets\GameStuff\saveCapture.cs" />
+     <Compile Include="Assets\GameStuff\setEmotion.cs" />
+     <Compile Include="Assets\GameStuff\terminalcommandrunscript.cs" />
+     <Compile Include="Assets\ShowWebCam.cs" />
+     <Compile Include="Assets\StartMenu\MenuScript.cs" />
+     <Compile Include="Assets\StickAround.cs" />
+     <Compile Include="Assets\TakeAPhoto.cs" />
+     <Compile Include="Assets\Training\NextEmotion.cs" />
+     <Compile Include="Assets\Training\PlayVideo.cs" />
+     <Compile Include="Assets\Training\TrainModel.cs" />
+     <Compile Include="Assets\Training\TrainingDescriptionNav.cs" />
+     <Compile Include="Assets\Training\selectionPictures.cs" />
      <Compile Include="Assets\Vuforia\Scripts\BackgroundPlaneBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\CloudRecoBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\CylinderTargetBehaviour.cs" />
@@ -86,12 +99,7 @@
      <Compile Include="Assets\Vuforia\Scripts\WireframeBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\WireframeTrackableEventHandler.cs" />
      <Compile Include="Assets\Vuforia\Scripts\WordBehaviour.cs" />
-     <Compile Include="Assets\addface.cs" />
-     <Compile Include="Assets\getEmotion.cs" />
-     <Compile Include="Assets\hideQuestion.cs" />
-     <Compile Include="Assets\saveCapture.cs" />
-     <Compile Include="Assets\setEmotion.cs" />
-     <Compile Include="Assets\terminalcommandrunscript.cs" />
+     <Compile Include="Assets\createMessage.cs" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
      <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />
      <None Include="Assets\link.xml" />
@@ -100,12 +108,14 @@
      <None Include="Assets\readme_SDK.txt" />
      <None Include="Assets\Vuforia\Shaders\VideoBackground.shader" />
      <None Include="Assets\license_3rdpartynotice.txt" />
+     <None Include="Assets\StreamingAssets\QCAR\MarginaliaTest.xml" />
      <None Include="Assets\Vuforia\Editor\WebcamProfiles\profiles.xml" />
      <None Include="Assets\Vuforia\Shaders\DepthMask.shader" />
-     <None Include="Assets\StreamingAssets\QCAR\MarginaliaTest.xml" />
      <None Include="Assets\Vuforia\Shaders\ClippingMask.shader" />
      <None Include="Assets\Vuforia\Shaders\BrightTexture.shader" />
+     <None Include="Assets\GameStuff\emotion_detector\faces_y_train.txt" />
      <None Include="Assets\Vuforia\Shaders\Text3D.shader" />
+     <None Include="Assets\GameStuff\emotion_detector\faces_X_train.txt" />
  <Reference Include="UnityEngine.Analytics">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>

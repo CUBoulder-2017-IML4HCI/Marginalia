@@ -70,11 +70,13 @@ namespace Vuforia
         {
             Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
             Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
+			string emotion = PlayerPrefs.GetString ("Emotion");
 
             // Enable rendering:
             foreach (Renderer component in rendererComponents)
             {
-                component.enabled = true;
+				if(component.CompareTag(emotion))
+                	component.enabled = true;
             }
 
             // Enable colliders:
