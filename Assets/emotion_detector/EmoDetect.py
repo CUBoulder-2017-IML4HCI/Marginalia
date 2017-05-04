@@ -1,14 +1,15 @@
 # Credit: This script adapted from work by Adithya Selvaprithiviraj
 # https://github.com/adithyaselv/face-expression-detect
+import sys
+sys.path.append('/usr/local/lib/python2.7/site-packages/')
+#sys.path.append('/Users/mhallwie/Documents/Marginalia/Assets/emotion_detector/')
 
-
-import argparse, sys, warnings
-
+import argparse, warnings
 
 try:
-    from FeatureGen import*
+    from FeatureGen import *
 except ImportError:
-    print "Make sure FeatureGen.pyc file is in the current directory"
+    print "FeatureGen.pyc file must be in the current directory"
     exit()
 
 try:
@@ -18,10 +19,10 @@ try:
     import cv2
     from sklearn.externals import joblib
 except ImportError:
-        print "Make sure you have OpenCV, dLib, scikit learn and skimage libraries properly installed"
+        print "OpenCV, dLib, scikit learn and skimage libraries must be properly installed"
         exit()
 
-emotions = {1: "anger", 2: "contempt", 3: "disgust", 4: "fear", 5: "happy", 6: "sadness", 7: "surprise"}
+emotions = {1: "angry", 2: "contemptuous", 3: "disgusted", 4: "afraid", 5: "happy", 6: "sad", 7: "surprised"}
 
 def Predict_Emotion(filename):
 
@@ -29,14 +30,14 @@ def Predict_Emotion(filename):
     try:
         img = io.imread(filename)
     except:
-        print "Exception: File Not found."
+        print str(filename) + "File Not found."
         return
 
     dets = detector(img, 1)
 
 
     if len(dets) == 0:
-        print "Unable to find any face."
+        print "Face not detected."
         return
 
     for k, d in enumerate(dets):
@@ -61,7 +62,6 @@ def Predict_Emotion(filename):
         emo_predicts = classify.predict(pca_features)
 
         sys.stdout.write(emotions[int(emo_predicts[0])])
-        print ""
 
 
 if __name__ == "__main__":
@@ -86,7 +86,7 @@ if __name__ == "__main__":
     try:
         predictor = dlib.shape_predictor(landmark_path)
     except:
-        print "Unable to find trained facial shape predictor. \nYou can download a trained facial shape predictor from: \nhttp://sourceforge.net/projects/dclib/files/dlib/v18.10/shape_predictor_68_face_landmarks.dat.bz2"
+        print "Predictor not found. \nYou can download a trained facial shape predictor from: \nhttp://sourceforge.net/projects/dclib/files/dlib/v18.10/shape_predictor_68_face_landmarks.dat.bz2"
         exit()
 
     # load trained data
@@ -95,10 +95,13 @@ if __name__ == "__main__":
         classify = joblib.load("traindata.pkl")
         pca = joblib.load("pcadata.pkl")
     except:
-        print "Unable to load trained data. \nMake sure that traindata.pkl and pcadata.pkl are in the current directory"
+        print "Model not found. \nMake sure that traindata.pkl and pcadata.pkl are in the current directory"
         exit()
+
 
     for filename in arg.i:
         Predict_Emotion(filename)
 
+    # filename = "/Users/askance/Google Drive/Marginalia/Marginalia/Assets/CamCaptures/p4.jpg"
+    # Predict_Emotion(filename)
 

@@ -1,9 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/DisplayEmotion.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/addface.cs">
     <Files>
-      <File FileName="Assets/saveCapture.cs" Line="11" Column="71" />
-      <File FileName="Assets/DisplayEmotion.cs" Line="38" Column="26" />
+      <File FileName="Assets/addface.cs" Line="27" Column="3" />
+      <File FileName="Assets/saveCapture.cs" Line="1" Column="1" />
+      <File FileName="Assets/DisplayEmotion.cs" Line="48" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
