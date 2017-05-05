@@ -1,8 +1,10 @@
 # Credit: This script adapted from work by Adithya Selvaprithiviraj
 # https://github.com/adithyaselv/face-expression-detect
 
+import sys
+sys.path.append('/usr/local/lib/python2.7/site-packages/')
 
-import argparse, sys, warnings
+import argparse, warnings
 
 
 try:

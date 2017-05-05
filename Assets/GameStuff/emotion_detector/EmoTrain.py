@@ -2,7 +2,10 @@
 # https://github.com/adithyaselv/face-expression-detect
 
 
-import argparse, sys, warnings
+import sys
+sys.path.append('/usr/local/lib/python2.7/site-packages/')
+
+import argparse, warnings
 from datetime import datetime
 
 

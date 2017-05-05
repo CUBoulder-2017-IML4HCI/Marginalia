@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/StartMenu/Splash Screen.unity
+- path: Assets/GameStuff/imageCapture.unity
   isLoaded: 1
   isActive: 1
