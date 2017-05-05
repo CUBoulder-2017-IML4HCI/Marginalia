@@ -1,7 +1,7 @@
 # Marginalia
 https://github.com/CUBoulder-2017-IML4HCI/Marginalia
 
-###Required Libraries
+### Required Libraries
 
 * Python 2.7
 * Unity 3D v 5.5.2f1
@@ -13,7 +13,7 @@ https://github.com/CUBoulder-2017-IML4HCI/Marginalia
 * Others?
 * Landmarks Detector Data: [https://github.com/tzutalin/dlib-android/blob/master/data/shape_predictor_68_face_landmarks.dat](https://github.com/tzutalin/dlib-android/blob/master/data/shape_predictor_68_face_landmarks.dat)
 
-###Build Instructions
+### Build Instructions
 * NOTE: This build requires an external web-cam running via USB
 * NOTE: This build requires a MacOS operating system
 * Install Unity
@@ -26,7 +26,7 @@ https://github.com/CUBoulder-2017-IML4HCI/Marginalia
 * Ensure the correct settings for running Vuforia (open Vuforia config on AR camera object, ensure your license key and image target database are loaded, ensure the correct camera is chosen for AR, should be the USB Webcam)
 * Run the application in Unity 3D v 5.5.2f1
 
-###Acknowledgements
+### Acknowledgements
 
 * Base training data: [http://www.consortium.ri.cmu.edu/ckagree/](http://www.consortium.ri.cmu.edu/ckagree/)
 * ML component based on [https://github.com/adithyaselv/face-expression-detect](https://github.com/adithyaselv/face-expression-detect)
