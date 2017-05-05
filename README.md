@@ -19,7 +19,7 @@ https://github.com/CUBoulder-2017-IML4HCI/Marginalia
 * Install Unity
 * Install Python 2.7
 * Install required python libraries (we suggest using the pip utility)
-* Place the Landmarks Detector data file in the marginalia_ml folder within the Unity project.
+* Place the Landmarks Detector data file in the emotion_detector folder within the Unity project.
 * Download and install Vuforia plugin for Unity [https://developer.vuforia.com/downloads/sdk](https://developer.vuforia.com/downloads/sdk)
 * Follow Vuforia instructions here (NOTE: you will need to set up your own license key and image targets database): https://library.vuforia.com/articles/Solution/Getting-Started-with-Vuforia-for-Unity-Development
 * Clone this github repo [https://github.com/CUBoulder-2017-IML4HCI/Marginalia](https://github.com/CUBoulder-2017-IML4HCI/Marginalia)
